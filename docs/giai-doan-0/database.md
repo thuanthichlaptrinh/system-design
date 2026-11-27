@@ -78,7 +78,7 @@ Việc ghế có thuộc đúng sự kiện của đơn hay không được ki�
 
 ## Những thứ cố ý chưa thêm
 
-Chỉ thêm sau khi làm thí nghiệm trong [bài thực hành](03-bai-thuc-hanh.md), để thấy được vấn đề trước.
+Chỉ thêm sau khi làm thí nghiệm trong [bài thực hành](bai-thuc-hanh.md), để thấy được vấn đề trước.
 
 ```sql
 -- Chốt chặn bán trùng ở tầng database

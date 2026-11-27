@@ -101,4 +101,4 @@ Module này gọi module khác qua service, không gọi thẳng repository củ
 - [ ] Các API trên chạy được với PostgreSQL qua Docker Compose
 - [ ] Schema được quản lý bằng Flyway
 - [ ] Có test cho các quy tắc đặt và huỷ ghế, gồm cả các trường hợp đồng thời ở trên
-- [ ] Làm xong [bài thực hành](03-bai-thuc-hanh.md)
+- [ ] Làm xong [bài thực hành](bai-thuc-hanh.md)

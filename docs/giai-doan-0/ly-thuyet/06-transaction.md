@@ -1,6 +1,6 @@
 # Transaction, isolation và lock
 
-Đây là phần quan trọng nhất của giai đoạn 0. Đọc trước khi làm [Bài 1](../03-bai-thuc-hanh.md).
+Đây là phần quan trọng nhất của giai đoạn 0. Đọc trước khi làm [Bài 1](../bai-thuc-hanh.md).
 
 ## Transaction
 

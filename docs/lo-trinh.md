@@ -10,12 +10,16 @@ Thời gian ước tính với 8–10 giờ/tuần. Tên Junior, Middle, Senior 
 - [ ] Data modeling: bảng, quan hệ, ràng buộc, chuẩn hoá
 - [ ] REST, phân trang, authentication, authorization
 - [ ] Java: OOP, collections, exception, thread cơ bản
+- [ ] SOLID, trước hết là S (một trách nhiệm) và D (phụ thuộc vào abstraction)
+- [ ] Design pattern: Dependency Injection, Repository, DTO, Proxy (`@Transactional`), Strategy
 
 **Dự án:** đăng ký, đăng nhập, quản lý sự kiện, đặt ghế.
 
-**Hoàn thành khi:** đạt [tiêu chí của giai đoạn 0](01-yeu-cau.md#hoàn-thành-khi).
+**Áp dụng:** viết cho chạy đúng, có test, rồi mới refactor. Có thể gom các cách khoá ghế ở Bài 1 sau một interface `SeatReservationStrategy`.
 
-**Đọc:** [bài lý thuyết](README.md#lý-thuyết-giai-đoạn-0), Use The Index, Luke.
+**Hoàn thành khi:** đạt [tiêu chí của giai đoạn 0](giai-doan-0/yeu-cau.md#hoàn-thành-khi).
+
+**Đọc:** [bài lý thuyết và các bước làm](giai-doan-0/README.md), Use The Index, Luke, [Refactoring.Guru](https://refactoring.guru/design-patterns).
 
 ## Giai đoạn 1: Junior (3–4 tháng)
 
@@ -53,6 +57,7 @@ Thời gian ước tính với 8–10 giờ/tuần. Tên Junior, Middle, Senior 
 - [ ] Timeout, circuit breaker, backpressure
 - [ ] Distributed tracing
 - [ ] CI/CD, rolling và canary deploy
+- [ ] Design pattern: Adapter (cổng thanh toán, email), State (vòng đời đơn), Observer và domain event
 
 **Dự án:** giữ ghế 10 phút, thanh toán giả lập, gửi vé qua email, read replica.
 
