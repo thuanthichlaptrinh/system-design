@@ -1,0 +1,64 @@
+name: ticketing
+
+services:
+  # Ứng dụng Spring Boot, chạy từ source trên máy
+  ticketing-app:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+      target: dev
+      args:
+        UID: ${HOST_UID:-1000}
+    container_name: ticketing-app
+    restart: unless-stopped
+    # Giới hạn CPU để máy vẫn dùng được khi build hoặc chạy test
+    cpus: "3"
+    ports:
+      - "8081:8081" # carima đang dùng 8080
+    environment:
+      DB_URL: jdbc:postgresql://ticketing-postgres:5432/ticketing
+      TEST_DB_URL: jdbc:postgresql://ticketing-postgres:5432/ticketing_test
+      DB_USERNAME: ticketing
+      DB_PASSWORD: ticketing # chỉ dùng cho môi trường phát triển
+    volumes:
+      - ./pom.xml:/workspace/pom.xml:ro
+      - ./src:/workspace/src:ro
+      - ticketing-target:/workspace/target
+      - ticketing-m2:/var/maven/.m2
+    depends_on:
+      ticketing-postgres:
+        condition: service_healthy
+    networks:
+      - ticketing-network
+
+  ticketing-postgres:
+    image: postgres:18.4-bookworm
+    container_name: ticketing-postgres
+    restart: unless-stopped
+    init: true # PID 1 dọn tiến trình mồ côi, tránh postgres tự crash recovery
+    cpus: "2"
+    environment:
+      POSTGRES_DB: ticketing
+      POSTGRES_USER: ticketing
+      POSTGRES_PASSWORD: ticketing # chỉ dùng cho môi trường phát triển
+    ports:
+      - "5433:5432" # carima đang dùng 5432
+    volumes:
+      - ticketing-pgdata:/var/lib/postgresql
+      - ./docker/postgres/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "ticketing", "-d", "ticketing"]
+      interval: 5s
+      timeout: 10s
+      retries: 5
+    networks:
+      - ticketing-network
+
+networks:
+  ticketing-network:
+    driver: bridge
+
+volumes:
+  ticketing-pgdata:
+  ticketing-target:
+  ticketing-m2:

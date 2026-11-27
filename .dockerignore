@@ -1,0 +1,10 @@
+.git
+.env
+.env.*
+target
+docs
+docker/postgres
+*.md
+.idea
+.vscode
+compose*.yml

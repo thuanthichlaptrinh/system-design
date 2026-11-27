@@ -36,7 +36,7 @@ Ví dụ xấu: một lớp implement `SeatReservationStrategy` nhưng khi ghế
 
 Đừng bắt một lớp phụ thuộc vào những phương thức nó không dùng. Nhiều interface nhỏ tốt hơn một interface khổng lồ.
 
-Ví dụ: module `booking` chỉ cần biết thông tin sự kiện thì không nên phụ thuộc vào interface có cả `createEvent`, `deleteEvent`.
+Ví dụ: phần đặt ghế chỉ cần biết thông tin sự kiện thì không nên phụ thuộc vào interface có cả `createEvent`, `deleteEvent`.
 
 ## D: Dependency Inversion
 

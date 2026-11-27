@@ -84,17 +84,7 @@ POST /api/bookings
 
 ## Cấu trúc code
 
-Chia theo module, trong mỗi module chia `controller`, `service`, `repository`:
-
-```
-com.example.ticketing
-├── user
-├── event
-├── booking
-└── common
-```
-
-Module này gọi module khác qua service, không gọi thẳng repository của nhau.
+Theo [kiến trúc code](../kien-truc.md): clean architecture gồm `domain`, `application`, `infrastructure`, `presentation`.
 
 ## Hoàn thành khi
 

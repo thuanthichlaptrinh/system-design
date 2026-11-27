@@ -1,0 +1,4 @@
+# Test chạy trên database riêng, không đụng dữ liệu dev.
+spring:
+  datasource:
+    url: ${TEST_DB_URL:jdbc:postgresql://localhost:5433/ticketing_test}
